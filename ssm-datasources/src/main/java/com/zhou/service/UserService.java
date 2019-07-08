@@ -14,6 +14,13 @@ public interface UserService {
      * @param uid
      * @return
      */
-    User selByPrimaryKey(String uid);
+    User selByPrimaryKey1(String uid);
+
+    /**
+     * 切换数据源
+     * @param uid
+     * @return
+     */
+    User selByPrimaryKey2(String uid);
 
 }

@@ -25,12 +25,15 @@ public class Demo1 {
     @Autowired
     UserService userService;
 
+    @Autowired
+    Demo2 demo2;
+
     @Test
     public void test01() {
 
        /* User user = userMapper.selByPrimaryKey("1138691164166201346");
         System.out.println(user);*/
-        User user = userService.selByPrimaryKey("1138691164166201346");
+        User user = userService.selByPrimaryKey1("1138691164166201346");
         System.out.println(user);
 
     }
@@ -43,4 +46,10 @@ public class Demo1 {
             System.out.println(names[i]);
         }
     }
+
+    @Test
+    public void testAop() {
+        demo2.say();
+    }
+
 }

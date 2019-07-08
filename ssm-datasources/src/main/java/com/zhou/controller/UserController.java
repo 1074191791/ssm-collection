@@ -19,10 +19,18 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/selByPrimaryKey/{uid}")
+    @RequestMapping("/selByPrimaryKey/{uid}/{type}")
     @ResponseBody
-    public User selByPrimaryKey(@PathVariable("uid") String uid) {
-        return userService.selByPrimaryKey(uid);
+    public User selByPrimaryKey(@PathVariable("uid") String uid, @PathVariable("type") String type) {
+
+        if("1".equals(type)) {
+            return userService.selByPrimaryKey1(uid);
+        } else {
+            return userService.selByPrimaryKey2(uid);
+        }
+
     }
+
+
 
 }
