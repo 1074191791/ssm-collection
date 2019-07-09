@@ -8,20 +8,27 @@ import com.zhou.emum.DataSourceKey;
  */
 public class DatasourceContextHolder {
 
-    private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();
+    private static final ThreadLocal<String> CONTEXT_HOLDER = new ThreadLocal<String>();
 
-    // 设置数据源
+    /**
+     *  设置数据源
+     */
     public static void setDataSourceType(DataSourceKey dbKey) {
-        contextHolder.set(dbKey.getDbKey());
+        CONTEXT_HOLDER.set(dbKey.getDbKey());
     }
 
-    // 获取当前的数据源
+    /**
+     * 获取当前的数据源
+     * @return
+     */
     public static String getDataSourceType() {
-        return contextHolder.get();
+        return CONTEXT_HOLDER.get();
     }
 
-    // 清空数据源
+    /**
+     * 清空数据源
+     */
     public static void clearDataSourceType() {
-        contextHolder.remove();
+        CONTEXT_HOLDER.remove();
     }
 }
