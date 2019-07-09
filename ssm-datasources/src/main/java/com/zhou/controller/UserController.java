@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * 选择DB1数据源
+     */
+    private static final String DB1 = "1";
+
     @Autowired
     UserService userService;
 
@@ -23,7 +28,7 @@ public class UserController {
     @ResponseBody
     public User selByPrimaryKey(@PathVariable("uid") String uid, @PathVariable("type") String type) {
 
-        if("1".equals(type)) {
+        if(DB1.equals(type)) {
             return userService.selByPrimaryKey1(uid);
         } else {
             return userService.selByPrimaryKey2(uid);

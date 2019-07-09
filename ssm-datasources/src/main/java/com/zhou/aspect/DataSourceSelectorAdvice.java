@@ -18,7 +18,9 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class DataSourceSelectorAdvice {
 
-    // 定义切点, 用于db源切换
+    /**
+     * 定义切点, 用于db源切换
+     */
     @Pointcut("@annotation(com.zhou.annotation.DataSourceSelector)")
     public void selectorDB() {
     }

@@ -8,6 +8,11 @@ import com.zhou.model.pojo.User;
  */
 public interface UserMapper {
 
+    /**
+     * 通过主键查询
+     * @param uid
+     * @return
+     */
     User selByPrimaryKey(String uid);
 
 }
