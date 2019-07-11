@@ -1,7 +1,6 @@
-package com.zhou.test;
+package com.zhou.service;
 
 import com.zhou.model.pojo.User;
-import com.zhou.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,7 +14,7 @@ import javax.annotation.Resource;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:applicationContext.xml")
-public class AccountServiceTest {
+public class UserServiceTest {
 
     @Resource
     private UserService userService;
