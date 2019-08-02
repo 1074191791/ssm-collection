@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ssm-datasources</module>
+        <module>ssm-mybatis-plus</module>
     </modules>
     <packaging>pom</packaging>
 
