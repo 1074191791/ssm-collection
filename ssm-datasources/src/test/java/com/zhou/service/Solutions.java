@@ -13,7 +13,7 @@ public class Solutions {
 
     @Test
     public void test01() {
-        System.out.println(lengthOfLongestSubstring("dvdf"));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
     }
 
     public int lengthOfLongestSubstring(String s) {
@@ -25,20 +25,18 @@ public class Solutions {
         }
 
         int maxLength = 0;
-        int flag = 0;
+        int current = 0;
         char[] arr = s.toCharArray();
         HashSet hashSet = new HashSet();
         for(int i = 0; i < arr.length; ++i) {
             if(hashSet.contains(arr[i])) {
-                flag = 1;
-                hashSet.clear();
-                hashSet.add(arr[i]);
+                current++;
+                hashSet.remove(arr[i]);
             } else {
                 hashSet.add(arr[i]);
-                flag++;
             }
-            if(maxLength < flag) {
-                maxLength = flag;
+            if(maxLength < i - current+1) {
+                maxLength = i - current+1;
             }
         }
         return maxLength;

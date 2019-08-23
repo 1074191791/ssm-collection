@@ -1,6 +1,5 @@
 package com.zhou.service;
 
-import com.zhou.model.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -22,11 +21,20 @@ public class UserServiceTest {
     @Test
     public void queryByUserId1() {
 
-        String userId = "1";
+        /*String userId = "1";
 
         User user1 = userService.selByPrimaryKey1(userId);
         System.out.println("user1 = " + user1);
         User user2 = userService.selByPrimaryKey2(userId);
-        System.out.println("user2 = " + user2);
+        System.out.println("user2 = " + user2);*/
+
+        long start = System.nanoTime();
+        try {
+            new Thread().sleep(1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println((System.nanoTime() - start)/1000/1000/1000);
+        System.out.println(System.nanoTime() - start);
     }
 }
