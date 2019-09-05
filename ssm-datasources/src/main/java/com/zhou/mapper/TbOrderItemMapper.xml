@@ -102,7 +102,12 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhou.model.pojo.TbOrderItem" >
+    <delete id="deleteByIds" parameterType="string">
+      delete  from
+      tb_order_item
+      where id in (#{ids})
+    </delete>
+    <insert id="insert" parameterType="com.zhou.model.pojo.TbOrderItem" >
     insert into tb_order_item (id, item_id, order_id, 
       num, title, price, total_fee, 
       pic_path)

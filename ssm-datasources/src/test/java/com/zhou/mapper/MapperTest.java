@@ -26,6 +26,9 @@ public class MapperTest {
     @Resource
     private TbOrderMapper tbOrderMapper;
 
+    @Resource
+    private TbOrderItemMapper tbOrderItemMapper;
+
 
     @Test
     public void testSel() {
@@ -41,6 +44,12 @@ public class MapperTest {
         System.out.println("tbItems = " + tbItems.size());
     }
 
+    @Test
+    public void testDelByStringIds() {
+        String ids = "1,2,3";
+        int i = tbOrderItemMapper.deleteByIds(ids);
+        System.out.println(i);
 
+    }
 
 }
