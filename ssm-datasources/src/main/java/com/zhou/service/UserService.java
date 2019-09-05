@@ -1,6 +1,7 @@
 package com.zhou.service;
 
-import com.zhou.model.pojo.User;
+
+import com.zhou.model.pojo.TbUser;
 
 /**
  * @author zhous
@@ -14,13 +15,13 @@ public interface UserService {
      * @param uid
      * @return
      */
-    User selByPrimaryKey1(String uid);
+    TbUser selByPrimaryKey1(String uid);
 
     /**
      * 切换数据源
      * @param uid
      * @return
      */
-    User selByPrimaryKey2(String uid);
+    TbUser selByPrimaryKey2(String uid);
 
 }

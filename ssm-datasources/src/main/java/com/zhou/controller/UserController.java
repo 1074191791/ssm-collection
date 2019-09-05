@@ -1,6 +1,6 @@
 package com.zhou.controller;
 
-import com.zhou.model.pojo.User;
+import com.zhou.model.pojo.TbUser;
 import com.zhou.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class UserController {
 
     @RequestMapping("/selByPrimaryKey/{uid}/{type}")
     @ResponseBody
-    public User selByPrimaryKey(@PathVariable("uid") String uid, @PathVariable("type") String type) {
+    public TbUser selByPrimaryKey(@PathVariable("uid") String uid, @PathVariable("type") String type) {
 
         if(DB1.equals(type)) {
             return userService.selByPrimaryKey1(uid);

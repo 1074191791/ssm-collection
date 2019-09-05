@@ -1,10 +1,12 @@
 package com.zhou.service;
 
-import com.zhou.model.dto.UserDTO;
-import com.zhou.model.pojo.User;
+import com.zhou.model.pojo.TbUser;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,8 +19,10 @@ public class MethodTest {
     @Test
     public void Test01() {
 
-        UserDTO userDTO = new UserDTO();
+        TbUser userDTO = new TbUser();
         Result result = new Result();
+
+        new HashMap<String,Object>();
 
         result.i = 1;
 
@@ -29,7 +33,7 @@ public class MethodTest {
     }
 
 
-    public Boolean checkInputParameter(UserDTO userDTO, Result result) {
+    public Boolean checkInputParameter(TbUser userDTO, Result result) {
         result.i = 10;
 
         return true;
@@ -39,7 +43,7 @@ public class MethodTest {
 
     @Test
     public void test02() {
-
+        System.out.println("adsfasd");
     }
 
     public void add1() {
@@ -87,11 +91,11 @@ public class MethodTest {
         i = 10000;
     }
 
-    private void setUser(User user) {
+    private void setUser(TbUser user) {
 //        User replace = new User();
 //        replace.setUsername("azhe");
 //        user = replace;
-        user.setUsername("adsfadfasf");
+       // user.setUsername("adsfadfasf");
     }
 
     private void set(Map<String, String> param) {
@@ -99,6 +103,22 @@ public class MethodTest {
         Map<String, String> aa = new HashMap<String, String>();
         aa.put("123","123");
         param = aa;
+    }
+
+
+    @Test
+    public void test010() {
+
+        List<String> orderNoList = new ArrayList<String>();
+        /*orderNoList.add("001");
+        orderNoList.add("002");
+        orderNoList.add("003");
+        orderNoList.add("004");
+        orderNoList.add("005");*/
+
+        String join = StringUtils.join(orderNoList.toArray(), ",");
+        System.out.println(join);
+
     }
 
 }
