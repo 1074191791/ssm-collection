@@ -2,6 +2,8 @@ package com.zhou.mapper;
 
 import com.zhou.model.dto.TraOrderDTO;
 import com.zhou.model.pojo.TbItem;
+import com.zhou.model.pojo.TbOrderItem;
+import com.zhou.model.pojo.TbOrderItemExample;
 import com.zhou.model.pojo.TbUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,6 +52,12 @@ public class MapperTest {
         int i = tbOrderItemMapper.deleteByIds(ids);
         System.out.println(i);
 
+    }
+
+    @Test
+    public void testCount() {
+        int i = tbOrderItemMapper.countByExample(new TbOrderItemExample());
+        System.out.println(i);
     }
 
 }
