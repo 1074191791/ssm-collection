@@ -18,14 +18,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     TbUserMapper tbUserMapper;
 
+    @Override
     @DataSourceSelector(dataSource = DataSourceKey.DB1)
     public TbUser selByPrimaryKey1(String uid) {
-        return tbUserMapper.selectByPrimaryKey(Long.parseLong(uid));
+        return tbUserMapper.selectById(Long.parseLong(uid));
     }
 
+    @Override
     @DataSourceSelector(dataSource = DataSourceKey.DB2)
     public TbUser selByPrimaryKey2(String uid) {
-        return tbUserMapper.selectByPrimaryKey(Long.parseLong(uid));
+        return tbUserMapper.selectById(Long.parseLong(uid));
     }
 
 

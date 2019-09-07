@@ -1,5 +1,6 @@
 package com.zhou.mapper;
 
+import com.zhou.CommonTest;
 import com.zhou.model.dto.TraOrderDTO;
 import com.zhou.model.pojo.TbItem;
 import com.zhou.model.pojo.TbOrderItem;
@@ -18,9 +19,7 @@ import java.util.List;
  * @author zhous
  * @create 2019-09-05 14:28
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:applicationContext.xml")
-public class MapperTest {
+public class MapperTest extends CommonTest {
 
     @Autowired
     private TbUserMapper userMapper;
@@ -34,7 +33,7 @@ public class MapperTest {
 
     @Test
     public void testSel() {
-        TbUser tbUser = userMapper.selectByPrimaryKey(1L);
+        TbUser tbUser = userMapper.selectById(1L);
         System.out.println(tbUser);
     }
 

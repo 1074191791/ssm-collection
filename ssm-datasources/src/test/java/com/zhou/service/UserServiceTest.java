@@ -23,7 +23,6 @@ public class UserServiceTest {
     public void queryByUserId1() {
 
         String userId = "1";
-
         TbUser user1 = userService.selByPrimaryKey1(userId);
         System.out.println("user1 = " + user1);
         TbUser user2 = userService.selByPrimaryKey2(userId);
