@@ -105,7 +105,7 @@
     <delete id="deleteByIds" parameterType="string">
       delete  from
       tb_order_item
-      where id in (#{ids})
+      where id in (#{0})
     </delete>
     <insert id="insert" parameterType="com.zhou.model.pojo.TbOrderItem" >
     insert into tb_order_item (id, item_id, order_id, 
@@ -176,6 +176,20 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+
+  <select id="selIdIn" parameterType="string" resultType="com.zhou.model.pojo.TbOrderItem">
+    select *
+    from tb_order_item
+    where id in (${_parameter})
+  </select>
+  <select id="selById" parameterType="int" resultType="com.zhou.model.pojo.TbOrderItem">
+    select *
+    from tb_order_item
+    where id = #{id}
+  </select>
+
+
   <update id="updateByExampleSelective" parameterType="map" >
     update tb_order_item
     <set >
@@ -260,4 +274,5 @@
       pic_path = #{picPath,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
 </mapper>

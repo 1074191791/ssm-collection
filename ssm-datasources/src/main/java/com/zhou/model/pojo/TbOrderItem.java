@@ -17,6 +17,20 @@ public class TbOrderItem {
 
     private String picPath;
 
+    @Override
+    public String toString() {
+        return "TbOrderItem{" +
+                "id='" + id + '\'' +
+                ", itemId='" + itemId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", num=" + num +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", totalFee=" + totalFee +
+                ", picPath='" + picPath + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

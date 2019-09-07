@@ -30,4 +30,9 @@ public interface TbOrderItemMapper {
     int updateByPrimaryKey(TbOrderItem record);
 
     int deleteByIds(String ids);
+
+    List<TbOrderItem> selIdIn(String ids);
+
+    TbOrderItem selById(int id);
+
 }

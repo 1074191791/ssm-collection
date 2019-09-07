@@ -38,15 +38,9 @@ public class BigTest {
         System.out.println(a1.equals(c1));
         System.out.println(a1.compareTo(c1) == 0);
 
-
-
-
         /*BigDecimal a2 = new BigDecimal("2");
         BigDecimal b2 = new BigDecimal(2);
         System.out.println(a2 == b2);*/
-
-
-
 
     }
 }

@@ -53,6 +53,8 @@
     <!-- SqlSessionFactory -->
     <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dynamicDatasource"></property>
+        <!-- 加载mybatis的全局配置文件 -->
+        <property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
         <property name="typeAliasesPackage" value="com.bjsxt.model.pojo"></property>
     </bean>
 

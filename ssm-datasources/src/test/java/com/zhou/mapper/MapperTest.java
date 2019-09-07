@@ -48,16 +48,28 @@ public class MapperTest {
 
     @Test
     public void testDelByStringIds() {
-        String ids = "1,2,3";
+        String ids = "\'1\',\'2\',\'3\'";
         int i = tbOrderItemMapper.deleteByIds(ids);
         System.out.println(i);
-
     }
 
     @Test
     public void testCount() {
         int i = tbOrderItemMapper.countByExample(new TbOrderItemExample());
         System.out.println(i);
+    }
+
+    @Test
+    public void test000() {
+        List<TbOrderItem> tbOrderItems = tbOrderItemMapper.selIdIn("1,2,3");
+        System.out.println(tbOrderItems.size());
+    }
+
+
+    @Test
+    public void test001() {
+        TbOrderItem tbOrderItem = tbOrderItemMapper.selById(1);
+        System.out.println(tbOrderItem);
     }
 
 }
