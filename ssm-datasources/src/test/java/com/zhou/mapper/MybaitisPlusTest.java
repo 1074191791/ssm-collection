@@ -1,14 +1,11 @@
 package com.zhou.mapper;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.zhou.CommonTest;
 import com.zhou.model.pojo.TbUser;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +22,20 @@ public class MybaitisPlusTest extends CommonTest {
 
         List<TbUser> tbUsers = tbUserMapper.selectList(null);
         tbUsers.stream().forEach(System.out::println);
+    }
+
+    @Test
+    public void test02() {
+        TbUser tbUser = new TbUser();
+        tbUser.setId(999998L);
+        tbUser.setCreated(new Date());
+        tbUser.setUpdated(new Date());
+        tbUser.setEmail("123@qq.com");
+        tbUser.setPassword("sss1");
+        tbUser.setPhone("123");
+        tbUser.setUsername("zhou");
+        int insert = tbUserMapper.insert(tbUser);
+        System.out.println(insert);
     }
 
 
