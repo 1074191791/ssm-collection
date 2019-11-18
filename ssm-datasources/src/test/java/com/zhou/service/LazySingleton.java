@@ -22,6 +22,4 @@ public class LazySingleton {
         return lazySingleton;
     }
 
-
-
 }
